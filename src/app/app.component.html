@@ -10,4 +10,14 @@
       </ol>
     </div>
   </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <button (click)="displayDetails()">Display Details</button>
+      <p *ngIf="showButton()">Secret Password = tuna</p>
+      <ul>
+        <!--<p [ngClass]="{online: serverStatus==='online'}" [ngStyle]="{backgroundColor: getColor()}">-->
+        <p [ngClass]="{overFive: i > 4}" [ngStyle]="{backgroundColor: getColor(i)}" *ngFor="let logItem of logItems; let i = index">{{logItems[i] | json}}</p>
+      </ul>
+    </div>
+  </div>
 </div>
